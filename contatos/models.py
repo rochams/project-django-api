@@ -21,6 +21,7 @@ class Contato(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete=models.DO_NOTHING)
     # o argumento on_delete indica o que fazer com os dados quando determinada categoria for deletada, nesse caso a ação escolhida foi não fazer nada.
     mostrar = models.BooleanField(default=True)
+    imagem = models.ImageField(blank=True, upload_to='fotos/%Y/%m/%d')
 
     def __str__(self):
         return self.nome

@@ -10,7 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+
 from pathlib import Path
+from django.contrib.messages import constants   # import das mensagens na linha 137
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -38,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'contatos.apps.ContatosConfig'
+    'contatos.apps.ContatosConfig',
+    'usuarios.apps.UsuariosConfig',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
@@ -122,7 +125,19 @@ STATICFILES_DIRS = [
     Path(BASE_DIR / 'templates' / 'static'),
 ]
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = Path(BASE_DIR) / 'media'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Variável de ambiente para mensagens ao usuário
+MESSAGE_TAGS = {
+    constants.ERROR: 'alert alert-danger',
+    constants.SUCCESS: 'alert alert-success',
+    constants.WARNING: 'alert alert-warning',
+    constants.INFO: 'alert alert-info',
+}

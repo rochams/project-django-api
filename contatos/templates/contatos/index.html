@@ -3,7 +3,7 @@
 {% block conteudo %}
 
 <h1 class="mt-5">Contatos</h1>
-
+<!--<button type="button" href="{% url 'login' %}" class="btn btn-dark">Login</button>-->
 <table class="table">
   <thead>
     <tr>
@@ -34,11 +34,11 @@
     {% for pagina in contatos.paginator.page_range %}
       {% if contatos.number == pagina %}
     <li class="page-item active">
-      <a class="page-link" href="?pag={{ pagina }}" tabindex="-1">{{ pagina }}</a>
+      <a class="page-link" href="?pag={{ pagina }}&termo={{ request.GET.termo }}" tabindex="-1">{{ pagina }}</a>
     </li>
       {% else %}
     <li class="page-item">
-      <a class="page-link" href="?pag={{ pagina }}" tabindex="-1">{{ pagina }}</a>
+      <a class="page-link" href="?pag={{ pagina }}&termo={{ request.GET.termo }}" tabindex="-1">{{ pagina }}</a>
     </li>
       {% endif %}
     {% endfor %}
