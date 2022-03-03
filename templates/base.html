@@ -4,7 +4,8 @@
 
 <head>
 
-  <title>Agenda</title>
+  <title>{% block titulo %}{% endblock %}Agenda</title>
+  <!-- O nome agenda ficou, pra aparecer em casos em que não incluamos nenhum texto no bloco-->
   {% include 'parciais/_head.html' %}
 
 </head>

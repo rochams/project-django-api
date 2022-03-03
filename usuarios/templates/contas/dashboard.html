@@ -1,5 +1,35 @@
 {% extends 'base.html' %}
 
+{% block titulo %}Dashboard - {{user}} | {% endblock %}
+
 {% block conteudo %}
-<h1>DASHBOARD</h1>
+{% include 'parciais/_messages.html' %}
+
+
+
+<div style="text-align: center; background-color: lightsteelblue; border-radius: 7px;">
+    <h1>
+        DASHBOARD
+    </h1>
+</div><br>
+<div>
+    <h5>Logado como: <u>{{ user.username}}</u>.</h5>
+    <h5><a style="text-align: right; font-weight: bold;" href="{% url 'logout' %}">Sair</a></h5>
+</div><br>
+<div class="container">
+    <form method="POST" action="{%url 'dashboard'%}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="table">
+            {{ form }}
+            <tr>
+                <td colspan="2">
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
 {% endblock %}
+
