@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-smvc3o@5vs@fgo8cagiq7w8_4xe=93(j#d@nf@#0_-v-r)#xcx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,6 +124,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     Path(BASE_DIR / 'templates' / 'static'),
 ]
+STATIC_ROOT = Path(BASE_DIR) / 'static'
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = Path(BASE_DIR) / 'media'
@@ -141,3 +142,6 @@ MESSAGE_TAGS = {
     constants.WARNING: 'alert alert-warning',
     constants.INFO: 'alert alert-info',
 }
+
+
+
