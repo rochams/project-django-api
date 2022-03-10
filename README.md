@@ -1,4 +1,4 @@
-## API para consulta a contatos utilizando: 
+## API - CRUD utilizando: 
 
 [![Blog](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://https://duckduckgo.com/?q=django+documentation&t=h_)
 ![Blog](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
